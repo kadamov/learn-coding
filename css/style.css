@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+/* Body */
+body {
+    font-family: source-sans-pro;
+    background-image: url("../images/main/bgr+logo.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    font-style: normal;
+    font-weight: 200;
+}
