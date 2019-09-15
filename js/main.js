@@ -70,7 +70,7 @@ function showLoader(show) {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
-const userRef = db.collection("users");
+const userRef = db.collection("user");
 
 let selectedUserId = "";
 
@@ -142,58 +142,12 @@ function appendUsers(users) {
   document.querySelector('#user-container').innerHTML = htmlTemplate;
 }
 
-// ========== CREATE ==========
-// add a new user to firestore (database)
-function createUser() {
-  // references to the input fields
-  let nameInput = document.querySelector('#name');
-  let mailInput = document.querySelector('#mail');
-  console.log(nameInput.value);
-  console.log(mailInput.value);
+function onclick(pageId){
+	showPage('course')
+	
+};
 
-  let newUser = {
-    name: nameInput.value,
-    mail: mailInput.value
-  };
 
-  userRef.add(newUser);
-}
 
-// ========== UPDATE ==========
-function selectUser(id, name, mail) {
-console.log(id);
-selectedUserId = id;
-  // references to the input fields
-  let nameInput = document.querySelector('#name-update');
-  let mailInput = document.querySelector('#mail-update');
-  nameInput.value = name;
-  mailInput.value = mail;
 
-  showPage('edit')
-}
 
-function updateUser() {
-  let nameInput = document.querySelector('#name-update');
-  let mailInput = document.querySelector('#mail-update');
-
-  let userToUpdate = {
-    name: nameInput.value,
-    mail: mailInput.value
-  };
-  userRef.doc(selectedUserId).set(userToUpdate);
-  showPage("home")
-}
-
-// ========== DELETE ==========
-function deleteUser(id) {
-  console.log(id);
-  userRef.doc(id).delete();
-}
-
-var user = firebase.auth().currentUser;
-
-user.updateEmail("user@example.com").then(function() {
-  // Update successful.
-}).catch(function(error) {
-  // An error happened.
-});

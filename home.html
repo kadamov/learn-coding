@@ -18,27 +18,57 @@
 <body>
  <!-- tabbar navigation -->
     <nav id="tabbar" class="tabbar hide">
-      <a href="#home" onclick="showPage('home')">Home</a>
-		<a href="#about" onclick="showPage('about')">Activity</a>
-      <a href="#profile" onclick="showPage('profile')">Profile</a>
+      <a href="#home" onclick="showPage('home')"><img src="images/main/home.png" alt="home icon"></a>
+		<a href="#about" onclick="showPage('about')"><img src="images/main/activ.png" alt="activity icon"></a>
+      <a href="#profile" onclick="showPage('profile')"><img src="images/main/profile.png" alt="profile icon"></a>
     </nav>
 	
 	  <!-- pages -->
   <!-- home page -->
   <section id="home" class="page">
-    <header class="topbar">
-      <h2>Home</h2>
-     
+	  <header class="topbar">
+      <h2>USER CRUD</h2>
+      <a class="right" href="#course" onclick="showPage('course')">Add</a>
     </header>
-<div id="user-container" class="grid-container"></div>
-  </section>
+    <section class="lessons">
+  <h3 class="h3les">Enter the course you want to master </h3>
+  <p class="section-lead">All of the courses you want to learn will be in you Home tab.</p>
+  <div class="services-grid">
+    <div class="service service1">
+      <div>
+          <img alt="HTML" src="images/main/htmlicon.png">;
+                </div>
+      <h4 class="h4head">HTML</h4>
+      <p class="par">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		<a href="#course" class="cta" onclick="showPage('course')">Read More</a>
+    </div>
+
+    <div class="service service2">
+      <div>
+          <img alt="HTML" src="images/main/css.png">;
+                </div>
+      <h4>CSS</h4>
+      <p class="par">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		<a href="#" class="cta">Read More <span class="ti-angle-right"></span></a>
+    </div>
+
+    <div class="service service3">
+      <div>
+          <img alt="HTML" src="images/main/js.png">;
+                </div>
+      <h4 class="h4head">Java Script</h4>
+      <p class="par">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <a href="#" class="cta">Read more <span class="ti-angle-right"></span></a>
+    </div>
+  </div>
+</section>
+	  </section>
 
   <!-- about page -->
   <section id="about" class="page">
-    <header class="topbar">
-      <h2>activity</h2>
-    </header>
-    <p>This is my activity page</p>
+    
+    <h2 class="activitytext">Course Activity</h2>
+	  
   </section>
 	
 	<!-- contact page -->
@@ -56,6 +86,24 @@
     <section id="firebaseui-auth-container">
 		
   </section>
+		<!-- HTML course page -->
+  <section id="course" class="page">
+    <header class="topbar">
+      <a class="left" href="#home" onclick="showPage('home')">Back</a>
+      <h2>Learn HTML</h2>
+		
+    </header>
+    
+  
+  </section>
+		
+		
+		
+	</section>
+	<!-- loader  -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
 
 </body>
 	<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
