@@ -141,13 +141,3 @@ function appendUsers(users) {
   }
   document.querySelector('#user-container').innerHTML = htmlTemplate;
 }
-
-function onclick(pageId){
-	showPage('course')
-	
-};
-
-
-
-
-

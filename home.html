@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 	<meta name="keywords" content="learn,introducing">
   <meta name="author" content="Learn-Coding">
-	
+
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Get started with HTML, CSS and JavaScript">
-    
+
 <title>Learn Coding</title>
 	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
   <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 <link href="css/style.css" rel="stylesheet" type="text/css">
-	
+
 
 </head>
 <body>
@@ -22,7 +22,7 @@
 		<a href="#about" onclick="showPage('about')"><img src="images/main/activ.png" alt="activity icon"></a>
       <a href="#profile" onclick="showPage('profile')"><img src="images/main/profile.png" alt="profile icon"></a>
     </nav>
-	
+
 	  <!-- pages -->
   <!-- home page -->
   <section id="home" class="page">
@@ -66,39 +66,52 @@
 
   <!-- about page -->
   <section id="about" class="page">
-    
+
     <h2 class="activitytext">Course Activity</h2>
-	  
+
   </section>
-	
+
 	<!-- contact page -->
   <section id="profile" class="page">
     <header class="topbar">
       <h2>Profile</h2>
-      <a class="right" href="#" onclick="logout()">Logout</a>
+      <a class="left" href="#" onclick="logout()">Logout</a>
+			<a  class="right" href="#" onclick="showPage('settings')"><img src="images/main/settings.png" alt="settings icon"></a>
     </header>
 
   </section>
-	
+
 	<section id="login" class="page">
-    
+
     <!-- firebase auth container  -->
     <section id="firebaseui-auth-container">
-		
+
   </section>
+
+	<!-- settings page -->
+	<section id="settings" class="page">
+		<header class="topbar">
+			<a class="left" href="#home" onclick="showPage('home')">Back</a>
+			<h2>Learn HTML</h2>
+		</header>
+
+
+
+	</section>
+
 		<!-- HTML course page -->
   <section id="course" class="page">
     <header class="topbar">
       <a class="left" href="#home" onclick="showPage('home')">Back</a>
       <h2>Learn HTML</h2>
-		
     </header>
-    
-  
+
+
+
   </section>
-		
-		
-		
+
+
+
 	</section>
 	<!-- loader  -->
   <div id="loader">
