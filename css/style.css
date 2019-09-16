@@ -6,6 +6,7 @@
   --light-grey: #f1f1f4;
   --text-color-light: #f1f1f1;
   --text-color-dark: #333;
+  --gutter: 20px;
 }
 
 /* ---------- general styling ---------- */
@@ -75,6 +76,8 @@ a {
 
 
 .tabbar {
+  display: flex;
+  justify-content: space-between;
   background-color: #005C5C;
   position: fixed;
   bottom: 0;
@@ -85,12 +88,12 @@ a {
 
 /* Style the links inside the navigation bar */
 .tabbar a {
-  display: inline-block;
+width: 33%;
   color: var(--text-color-light);
   text-align: center;
-  padding: 20px 50px;
+  padding: 10px 25px;
   text-decoration: none;
-  font-size: 0.8em;
+  font-size: 0.6em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -99,11 +102,12 @@ a {
 .tabbar a:hover {
   background-color: var(--light-grey);
   color: var(--text-color-dark);
+
 }
 
 /* Add a color to the active/current link */
 .tabbar a.active {
-  background-color: var(--light-green);
+  background-color: #0B3030;
   color: var(--text-color-light);
 }
 
@@ -112,7 +116,7 @@ a {
   display: none;
   /*min heigh is screen heigh minus height of tab and top bar */
   min-height: calc(100vh - 110px);
-  background: var(--light-grey);
+  background: #1C7B7B;
   animation: fadeIn 0.4s;
   /* padding equals height of tabbar and topbar */
   padding: 55px 0;
@@ -251,20 +255,26 @@ input {
 	background-size: cover;
 }
 
-#about{
+#activity-bar{
 	background-image: url("../images/main/activitybgr.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+.grid-item{
+  color: white;
+}
 
-
-
+/* Courses grid */
 .cta {
+  max-width: 100%;
+  background-color: #2BB8B8;
+  padding: 10px 0px;
+  border-radius: 30px;
   text-decoration: none;
   margin: 1rem 0;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  font-size: 0.8125rem;
+  font-size: 1.1525rem;
   letter-spacing: 1px;
 }
 
@@ -283,9 +293,9 @@ input {
 
 .h3les {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   color: white;
-  font-size: 1.825rem;
+  font-size: 1.925rem;
   margin: 1.3rem 0;
 }
 
@@ -296,6 +306,7 @@ input {
 }
 .par{
 	color: white;
+  font-size: 1.3rem;
 }
 
 .service .cta {
@@ -324,7 +335,7 @@ input {
 
 .service {
   background-color:  #245959;
-  margin: 20px;
+  margin: 10px;
   padding: 20px;
   border-radius: 60px;
   text-align: center;
@@ -360,6 +371,7 @@ input {
   background-image: url("../images/main/htmlboxbgr.png");
 	background-repeat: no-repeat;
 	background-size: cover;
+  border: 2px solid #425fca;
 }
 
 .service2 i,
@@ -403,6 +415,7 @@ input {
     flex-direction: column;
 
   }
+  /* Courses grid */
 }
 
 
@@ -485,4 +498,153 @@ input {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 0.4s, opacity 0.4s linear;
+}
+/* Profile page information */
+.card {
+  position: relative;
+  top: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+.social{
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+/* Profile page information */
+
+/* Profile image upload */
+.profile-pic {
+    width: 100%;
+    display: block;
+}
+
+.file-upload {
+  width: 30%;
+    position: relative;
+    bottom: 3rem;
+    left: 0rem;
+
+}
+.circle {
+  background-image: url("../images/main/profile-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+    border-radius: 1000px !important;
+    overflow: hidden;
+    width: 128px;
+    height: 128px;
+    border: 8px solid rgba(43, 184, 184, 9.9);
+    position: relative;
+    top: 35px;
+    margin: auto;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.finish-course-image1{
+  background-image: url("../images/main/html-finished.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: auto;
+}
+.finish-course-image2{
+  background-image: url("../images/main/js-finished.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: auto;
+}
+.finish-course-image3{
+  background-image: url("../images/main/html-finished.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: auto;
+}
+.finish-course-image4{
+  background-image: url("../images/main/js-finished.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: auto;
+}
+.p-image {
+
+  position: relative;
+  top: 39px;
+  margin: auto;
+  color: #666666;
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+.p-image:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+.upload-button {
+  font-size: 1.2em;
+}
+
+.upload-button:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  color: #999;
+}
+/* Profile image upload */
+ul {
+  list-style: none;
+  padding: 0;
+}
+.app {
+  position: relative;
+  bottom: 2rem;
+  padding: var(--gutter) 0;
+  display: grid;
+  grid-gap: var(--gutter) 0;
+  grid-template-columns: var(--gutter) 1fr var(--gutter);
+  align-content: start;
+}
+.app > * {
+  grid-column: 2 / -2;
+}
+
+.app > .full {
+  grid-column: 1 / -1;
+}
+
+.hs {
+  position: relative;
+  bottom: 1rem;
+  display: grid;
+  grid-gap: calc(var(--gutter) / 2);
+  grid-template-columns: 10px repeat(6, calc(50% - var(--gutter) * 2)) 10px;
+  grid-template-rows: minmax(150px, 1fr);
+
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
+  padding-bottom: calc(.75 * var(--gutter));
+  margin-bottom: calc(-.5 * var(--gutter));
+}
+
+.hs:before,
+.hs:after {
+  content: '';
+}.finish-text{
+  text-align: left;
+}
+
+/* Hide scrollbar */
+.hide-scroll {
+  overflow-y: hidden;
+  margin-bottom: calc(-.1 * var(--gutter));
 }

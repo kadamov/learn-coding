@@ -110,34 +110,111 @@ function logout() {
 
 function appendUserData(user) {
   document.querySelector('#profile').innerHTML += `
-    <h3>${user.displayName}</h3>
-    <p>${user.email}</p>
+  <div class="row">
+     <div class="small-12 medium-2 large-2 columns">
+       <div class="circle">
+         <!-- User Profile Image -->
+       </div>
+       <div class="p-image">
+       <i  class="fa fa-camera upload-button"></i>
+<input class="file-upload" type="file" accept="image/*"/>
+       </div>
+    </div>
+  </div>
+
+    <div class="card">
+  <h2>${user.displayName}</h2>
+  <p class="title">Business Academy Aarhus</p>
+  <p class="title">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut</p>
+  <div style="margin: 24px 0;">
+    <a href="#" class="social" ><i class="fa fa-dribbble"></i></a>
+    <a href="#" class="social" ><i class="fa fa-instagram"></i></a>
+    <a href="#" class="social" ><i class="fa fa-linkedin"></i></a>
+    <a href="#" class="social" ><i class="fa fa-facebook"></i></a>
+  </div>
+  <div class="app">
+  <h3 class="finish-text">Finished Courses</h3>
+
+  <div class="full hide-scroll">
+
+    <ul class="hs">
+      <li class="finish-course-image1"></li>
+      <li class="finish-course-image2"></li>
+      <li class="finish-course-image3"></li>
+      <li class="finish-course-image4"></li>
+    </ul>
+
+  </div>
   `;
 }
+$(document).ready(function() {
 
 
+    var readURL = function(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
-// ========== READ ==========
-// watch the database ref for changes
-userRef.onSnapshot(function(snapshotData) {
-  let users = snapshotData.docs;
-  appendUsers(users);
+            reader.onload = function (e) {
+                $('.profile-pic').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+
+    $(".file-upload").on('change', function(){
+        readURL(this);
+    });
+
+    $(".upload-button").on('click', function() {
+       $(".file-upload").click();
+    });
 });
 
-// append users to the DOM
-function appendUsers(users) {
-  let htmlTemplate = "";
-  for (let user of users) {
-    console.log(user.id);
-    console.log(user.data().name);
-    htmlTemplate += `
-    <article>
-      <h3>${user.data().name}</h3>
-      <p><a href="mailto:${user.data().mail}">${user.data().mail}</a></p>
-      <button onclick="deleteUser('${user.id}')">DELETE</button>
-      <button onclick="selectUser('${user.id}', '${user.data().name}', '${user.data().mail}')">UPDATE</button>
-    </article>
-    `;
+
+
+
+
+function addToActivity(el) {
+  let link = el.getAttribute("data-link");
+  fetch(link)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(json) {
+      appendProducts(json);
+
+    });
+
+  function appendProducts(product) {
+
+      console.log(product);
+      document.querySelector("#activity-bar").innerHTML += `
+
+      <div class="service service2">
+        <div>
+            <img alt="HTML" src="${getFeaturedImageUrl(product)}">;
+                  </div>
+        <h4>${product.title.rendered}</h4>
+        <p class="par">${product.content.rendered}</p>
+  		<a href="#" class="cta">Read More <span class="ti-angle-right"></span></a>
+      </div>
+      `;
+
   }
-  document.querySelector('#user-container').innerHTML = htmlTemplate;
+
+  function getFeaturedImageUrl(post) {
+    let imageUrl = "";
+    if (post._embedded['wp:featuredmedia']) {
+      imageUrl = post._embedded['wp:featuredmedia'][0].source_url;
+    }
+    return imageUrl;
+  }
+}
+
+function showSettings (){
+
+  $("#settings").show();
+
 }

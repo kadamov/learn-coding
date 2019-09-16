@@ -9,9 +9,14 @@
   <meta name="description" content="Get started with HTML, CSS and JavaScript">
 
 <title>Learn Coding</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
   <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 <link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 </head>
@@ -19,17 +24,14 @@
  <!-- tabbar navigation -->
     <nav id="tabbar" class="tabbar hide">
       <a href="#home" onclick="showPage('home')"><img src="images/main/home.png" alt="home icon"></a>
-		<a href="#about" onclick="showPage('about')"><img src="images/main/activ.png" alt="activity icon"></a>
+		<a href="#activity-bar" onclick="showPage('activity-bar')"><img src="images/main/activ.png" alt="activity icon"></a>
       <a href="#profile" onclick="showPage('profile')"><img src="images/main/profile.png" alt="profile icon"></a>
     </nav>
 
 	  <!-- pages -->
   <!-- home page -->
   <section id="home" class="page">
-	  <header class="topbar">
-      <h2>USER CRUD</h2>
-      <a class="right" href="#course" onclick="showPage('course')">Add</a>
-    </header>
+
     <section class="lessons">
   <h3 class="h3les">Enter the course you want to master </h3>
   <p class="section-lead">All of the courses you want to learn will be in you Home tab.</p>
@@ -40,7 +42,7 @@
                 </div>
       <h4 class="h4head">HTML</h4>
       <p class="par">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-		<a href="#course" class="cta" onclick="showPage('course')">Read More</a>
+			<a data-link="https://learn.kadamov.one/wp-json/wp/v2/posts/6?_embed" class="cta" onclick="addToActivity(this)">Add Course <span class="ti-angle-right"></span></a>
     </div>
 
     <div class="service service2">
@@ -49,23 +51,23 @@
                 </div>
       <h4>CSS</h4>
       <p class="par">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-		<a href="#" class="cta">Read More <span class="ti-angle-right"></span></a>
+		<a data-link="https://learn.kadamov.one/wp-json/wp/v2/posts/9?_embed" class="cta" onclick="addToActivity(this)">Add Course <span class="ti-angle-right"></span></a>
     </div>
 
     <div class="service service3">
       <div>
-          <img alt="HTML" src="images/main/js.png">;
+          <img alt="JS" src="images/main/js.png">;
                 </div>
       <h4 class="h4head">Java Script</h4>
       <p class="par">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <a href="#" class="cta">Read more <span class="ti-angle-right"></span></a>
+      <a data-link="https://learn.kadamov.one/wp-json/wp/v2/posts/12?_embed" class="cta" onclick="addToActivity(this)">Add Course <span class="ti-angle-right"></span></a>
     </div>
   </div>
 </section>
 	  </section>
 
   <!-- about page -->
-  <section id="about" class="page">
+  <section id="activity-bar" class="page">
 
     <h2 class="activitytext">Course Activity</h2>
 
@@ -79,6 +81,7 @@
 			<a  class="right" href="#" onclick="showPage('settings')"><img src="images/main/settings.png" alt="settings icon"></a>
     </header>
 
+
   </section>
 
 	<section id="login" class="page">
@@ -87,12 +90,12 @@
     <section id="firebaseui-auth-container">
 
   </section>
-
+</section>
 	<!-- settings page -->
 	<section id="settings" class="page">
 		<header class="topbar">
 			<a class="left" href="#home" onclick="showPage('home')">Back</a>
-			<h2>Learn HTML</h2>
+			<h2>Settings</h2>
 		</header>
 
 
@@ -112,7 +115,7 @@
 
 
 
-	</section>
+
 	<!-- loader  -->
   <div id="loader">
     <div class="spinner"></div>
