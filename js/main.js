@@ -201,8 +201,6 @@ document.querySelector('#profile').innerHTML += `
             <a href="#" class="cta" onclick="showPage('course')">Start Course<span class="ti-angle-right"></span></a>
         </div>
         `;
-
-
         }
 
         function getFeaturedImageUrl(post) {
