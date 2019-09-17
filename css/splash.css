@@ -11,20 +11,19 @@ html {
 }
 
 body {
-  margin: 0;
+  background-image: url("../images/splash/splash-bgr.png");
+background-repeat: no-repeat;
+background-size: cover;
+  margin: auto;
 }
 
 @media (min-width: 321px)and (max-width: 420px) {
-	
-	
+
+
 
   .preload {
       width: 100%;
-      height: 100%;
-      background-image: url("../images/splash/splash-bgr.png");
-	  background-repeat: no-repeat;
-	  background-size: cover;
-      ;
+      height: 800px;
   }
 
     .loader-frame {
@@ -35,7 +34,7 @@ body {
         right: 5%;
         top: 50%;
     }
-	
+
 
     .loader1,
     .loader2 {
@@ -49,7 +48,7 @@ body {
         position: relative;
        bottom: 350px;
 		right: 145px;
-         
+
     }
 
     .loader1 {
@@ -99,7 +98,3 @@ body {
         opacity: 0;
     }
 }
-
-
-
-
