@@ -198,7 +198,7 @@ document.querySelector('#profile').innerHTML += `
             </div>
             <h2>${product.title.rendered}</h2>
             <h3>${product.content.rendered}</h3>
-            <a href="#" class="cta" onclick="showPage('course')">Start Course<span class="ti-angle-right"></span></a>
+            <a href="#" class="cta" onclick="showPage('${product.slug}')">Start Course<span class="ti-angle-right"></span></a>
         </div>
         `;
         }

@@ -192,12 +192,23 @@ opacity: 0;
 transition: visibility 0s 0.4s, opacity 0.4s linear;
 }
 
-#course{
+#html-for-beginners{
 background-image: url("../images/main/coursesbgr.png");
 background-repeat: no-repeat;
 background-size: cover;
 
 }
+	#css-for-beginners{
+		background-image: url("../images/main/coursesbgr.png");
+background-repeat: no-repeat;
+background-size: cover;
+	}
+	#java-script{
+		
+		background-image: url("../images/main/coursesbgr.png");
+background-repeat: no-repeat;
+background-size: cover;
+	}
 
 #login{
 max-width: 100%;
