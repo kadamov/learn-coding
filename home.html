@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -7,7 +7,7 @@
     <meta name="author" content="Learn-Coding">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Get started with HTML, CSS and JavaScript">
+    <meta name="description" content="Learn HTML, CSS and JavaScript">
 
     <title>Learn Coding</title>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -19,7 +19,7 @@
 
 </head>
 
-<body>
+<body class="SPA">
     <!-- tabbar navigation -->
     <nav id="tabbar" class="tabbar hide">
         <a href="#home" onclick="showPage('home')"><img src="images/main/home.png" alt="home icon"></a>
@@ -30,7 +30,10 @@
     <!-- pages -->
     <!-- home page -->
     <section id="home" class="page">
-
+      <header class="topbar">
+          <h2>Home</h2>
+          <a class="right" href="#" onclick="showPage('settings')"><img src="images/main/settings.png" alt="settings icon"></a>
+      </header>
         <section class="lessons">
             <h3 class="h3les">Enter the course you want to master </h3>
             <p class="section-lead">All of the courses you want to learn will be in you Home tab.</p>
@@ -69,8 +72,11 @@
 
     <!-- about page -->
     <section id="activity-bar" class="page">
+      <header>
+          <h2 class="activitytext">Course Activity</h2>
 
-        <h2 class="activitytext">Course Activity</h2>
+      </header>
+
         <a class="icon-plus" href="#home" onclick="showPage('home')"><img src="images/main/icon-add.png" alt="add-courses-icon"></a>
     </section>
 
@@ -86,10 +92,14 @@
     </section>
 
     <section id="login" class="page">
-
+	<header>
+            <h2 style="display: none;">Login</h2>
+        </header>
         <!-- firebase auth container  -->
         <section id="firebaseui-auth-container">
-
+		<header >
+            <h2 style="display: none;" >Sign in</h2>
+        </header>
         </section>
     </section>
     <!-- settings page -->
@@ -111,7 +121,7 @@
             <a href="#" class="lang-dk">Dansk</a>
 
         </div>
-        </div>
+        
 
         <button class="accordion2">Privacy & Policy</button>
         <div class="panel2">
@@ -238,7 +248,7 @@
                 If there are any questions regarding this privacy policy you may contact us.</p>
 
         </div>
-        </div>
+        
         <div class="notif-settings">
             <h4 class="notif">Notifications</h4>
             <label class="switch">
@@ -306,14 +316,14 @@
             <p>Lets Begin..</p>
             <a class="go-course-button" onclick="showPage('beginner-course-html')">Go to Course <span class="ti-angle-right"></span></a>
         </div>
-        </div>
+       
 
         <button class="accordion">HTML Expert Level</button>
         <div class="panel">
             <p>Lets Begin..</p>
             <a class="go-course-button" onclick="showPage('beginner-course-html')">Go to Course <span class="ti-angle-right"></span></a>
         </div>
-        </div>
+        
 
 
     </section>
@@ -327,12 +337,12 @@
             <h4>What's HTML and how does it work?</h4>
             <p class="title-course2">In this course we get into the very first language of the web: HTML. What is HTML and how does it communicate with web browsers to display pages the way you want?
             </p>
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/PORRrz3Y8Vc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="380" height="315" src="https://www.youtube.com/embed/PORRrz3Y8Vc" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <p class="title-course2">In this video we go over the basic structure of HTML and create our first web page.
             </p>
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/-USAeFpVf_A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="380" height="315" src="https://www.youtube.com/embed/-USAeFpVf_A"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <h4>Here you can practice everything you have learned!</h4>
-            <iframe src="https://html-online.com/editor/" width="100%" height="515" frameborder="0"></iframe>
+            <iframe src="https://html-online.com/editor/" width="395" height="515" ></iframe>
 
 
         </div>
@@ -343,19 +353,16 @@
     <div id="loader">
         <div class="spinner"></div>
     </div>
-
-</body>
+	
 <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
 <!-- Add Firebase products that you want to use -->
 <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
 <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
 <!-- main js file -->
-<script src="js/main.js">
+<script src="js/main.js"></script>
+</body>
+	
 
-
-
-
-</script>
 
 </html>

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* ---------- root variables ---------- */
+@media (min-width: 320px) and (max-width: 480px) {/* ---------- root variables ---------- */
 :root {
 --green: rgb(38, 76, 89);
 --light-green: rgb(172, 198, 201);
@@ -920,4 +920,11 @@ font-family: arial;
 text-align:left;
 color: grey;
 font-size: 18px;
+}
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+
+
 }
